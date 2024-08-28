@@ -8,36 +8,29 @@
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
   <section>
     <h1>Mortgage Calculator</h1>
-    Clear All
+    <button>Clear All</button>
 
-    Mortgage Amount
+    <h2>Mortgage Amount</h2>
 
-    Mortgage Term
+    <h2>Mortgage Term</h2>
 
-    Interest Rate
+    <h2>Interest Rate</h2>
 
-    Mortgage Type
-    Repayment
-    Interest Only
+    <h2>Mortgage Type</h2>
+    <input type="radio" id="repayment" name="mortgageType" value="Repayment"> 
+    <label for="repayment">Repayment</label>
+    <input type="radio" id="interest" name="mortgageType" value="Interest"> 
+    <label for="interest">Interest Only</label>
 
-    Calculate Repayments
+    <button>Calculate Repayments</button>
 
     <!-- Empty results start -->
-
-    Results shown here
-
-    Complete the form and click “calculate repayments” to see what 
-    your monthly repayments would be.
 
     <!-- Empty results end -->
 
@@ -45,14 +38,14 @@
   </section>
 
   <section>
-    <h2>Your results</h2>
+    <h1>Your results</h1>
 
     <p>Your results are shown below based on the information you provided. 
     To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-    Your monthly repayments
+    <h2>Your monthly repayments</h2>
 
-    Total you'll repay over the term
+    <h2>Total you'll repay over the term</h2>
     <!-- Completed results end -->
   </section>
 </body>
