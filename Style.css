@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(202, 86%, 94%);
+}
+
+main {
+    background-color: white;
+    width: 35%;
+}
+
+section {
+    background-color: hsl(202, 55%, 16%);
+    width: 35%;
+}
