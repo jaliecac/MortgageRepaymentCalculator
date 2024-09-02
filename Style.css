@@ -39,7 +39,7 @@ h2 {
     font-size: 10pt;
 }
 
-div {
+main div {
     outline: 1px solid hsl(200, 26%, 54%);
     width: 80%;
     padding: 5px;
@@ -86,4 +86,11 @@ p {
 input[type="text"] {
     font-size: 12px;
     padding: 5px;
+}
+
+section div {
+    background-color: hsl(201, 57%, 11%);
+    padding: 10px;
+    border-radius: 10px;
+    border-top: 3px solid hsl(61, 70%, 52%);
 }
