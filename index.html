@@ -17,18 +17,20 @@
     <span>Clear All</span>
 
     <h2>Mortgage Amount</h2>
-    <input type="text" id="amount" name="mortgageAmount">
+    <div class="morg">$<input type="text" id="amount" name="mortgageAmount"></div>
 
-    <h2>Mortgage Term</h2>
-    <input type="text" id="term" name="mortgageTerm">
+    <h2 class="left margin">Mortgage Term</h2>
+    <h2 class="right">Interest Rate</h2>
 
-    <h2>Interest Rate</h2>
-    <input type="text" id="rate" name="interestRate">
+    <br>
+
+    <div class="termRate left"><input type="text" id="term" name="mortgageTerm">years</div>
+    <div class="termRate right"><input type="text" id="rate" name="interestRate">%</div>
 
     <h2>Mortgage Type</h2>
-    <div><input type="radio" id="repayment" name="mortgageType" value="Repayment"> 
+    <div class="radioButtons"><input type="radio" id="repayment" name="mortgageType" value="Repayment"> 
     <label for="repayment">Repayment</label><br></div>
-    <div><input type="radio" id="interest" name="mortgageType" value="Interest"> 
+    <div class="radioButtons"><input type="radio" id="interest" name="mortgageType" value="Interest"> 
     <label for="interest">Interest Only</label><br></div>
 
     <button><img src="assets/images/icon-calculator.svg" alt="Calculator">Calculate Repayments</button>
@@ -48,8 +50,12 @@
 
     <div>
       <h2>Your monthly repayments</h2>
+      <input type="text" id="repay" name="monthlyRepayment" placeholder="$">
+
+      <hr>
 
       <h2>Total you'll repay over the term</h2>
+      <input type="text" id="totalRepay" name="totalRepayment">
       <!-- Completed results end -->
     </div>
   </section>

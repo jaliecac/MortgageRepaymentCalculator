@@ -39,7 +39,7 @@ h2 {
     font-size: 10pt;
 }
 
-main div {
+.radioButtons {
     outline: 1px solid hsl(200, 26%, 54%);
     width: 80%;
     padding: 5px;
@@ -48,7 +48,6 @@ main div {
     font-size: 12pt;
     font-weight: 700;
     color: hsl(202, 55%, 16%);
-
 }
 
 img {
@@ -84,13 +83,75 @@ p {
 }
 
 input[type="text"] {
-    font-size: 12px;
+    font-size: 10px;
     padding: 5px;
 }
 
 section div {
     background-color: hsl(201, 57%, 11%);
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     border-radius: 10px;
     border-top: 3px solid hsl(61, 70%, 52%);
+}
+
+#repay {
+    font-size: 22pt;
+    width: 80%;
+    color: hsl(61, 70%, 52%);
+}
+
+section input[type="text"] {
+    border-style: none;
+    background-color: hsl(201, 57%, 11%);
+    color: white;
+    font-weight: 700;
+}
+
+hr {
+    border-color: hsl(200, 24%, 40%);
+    margin: 20px 0 20px 0;
+}
+
+.left {
+    display: inline-block;
+}
+
+.right {
+    display: inline-block;
+}
+
+.termRate {
+    font-size: 10pt;
+    border: 1px solid hsl(200, 26%, 54%);
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width:120px;
+    text-align: right;
+}
+
+.termRate input {
+    border-style: none;
+    width: 60px;
+    text-align: left;
+}
+
+.morg input{
+    border-style: none;
+    width:120px;
+}
+
+.morg {
+    width:160px;
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+}
+
+.margin {
+    margin-right: 80px;
+}
+
+input:focus {
+    outline: none;
 }
