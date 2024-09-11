@@ -9,23 +9,24 @@
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
   <link rel="stylesheet" href="Style.css">
+  <script src="Scripts.js"></script>
 </head>
-<body>
 
+<body>
   <main>
     <h1>Mortgage Calculator</h1>
-    <span>Clear All</span>
+    <span class="clear" onclick="clearAll()">Clear All</span>
 
     <h2>Mortgage Amount</h2>
-    <div class="morg">$<input type="text" id="amount" name="mortgageAmount"></div>
+    <div class="morg"><span class="morgText">$</span><input type="text" id="amount" name="mortgageAmount"></div>
 
     <h2 class="left margin">Mortgage Term</h2>
     <h2 class="right">Interest Rate</h2>
 
     <br>
 
-    <div class="termRate left"><input type="text" id="term" name="mortgageTerm">years</div>
-    <div class="termRate right"><input type="text" id="rate" name="interestRate">%</div>
+    <div class="termRate left"><input type="text" id="term" name="mortgageTerm"><span class="boxText">years</span></div>
+    <div class="termRate right"><input type="text" id="rate" name="interestRate"><span class="boxText">%</span></div>
 
     <h2>Mortgage Type</h2>
     <div class="radioButtons"><input type="radio" id="repayment" name="mortgageType" value="Repayment"> 
@@ -33,8 +34,7 @@
     <div class="radioButtons"><input type="radio" id="interest" name="mortgageType" value="Interest"> 
     <label for="interest">Interest Only</label><br></div>
 
-    <button><img src="assets/images/icon-calculator.svg" alt="Calculator">Calculate Repayments</button>
-
+    <button id="calculate" onclick="calculateResults()"><img src="assets/images/icon-calculator.svg" alt="Calculator">Calculate Repayments</button>
     <!-- Empty results start -->
 
     <!-- Empty results end -->
@@ -50,7 +50,7 @@
 
     <div>
       <h2>Your monthly repayments</h2>
-      <input type="text" id="repay" name="monthlyRepayment" placeholder="$">
+      <input type="text" id="repay" name="monthlyRepayment">
 
       <hr>
 
