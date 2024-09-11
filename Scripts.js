@@ -2,12 +2,28 @@ function calculateResults() {
     let rate = document.getElementById("rate").value;
     let term = document.getElementById("term").value;
     let mortgage = document.getElementById("amount").value;
-    let totalPayment = mortgage;
+    formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+    
+    // convert the information for the formula
+    rate = rate/100;
+    rate = rate/12;
+    term = term * 12;
 
-    for (let i=1; i<term; i++) {
-        totalPayment = parseInt(totalPayment) + (parseInt(totalPayment)*(parseInt(rate)/100))
+    if (document.getElementById("repayment").checked == true) {
+        // mortgage formula
+        let monthlyPayment = parseInt(mortgage) * ((rate*Math.pow((1+rate),term))/((Math.pow((1+rate),300))-1))
+        let totalPayment = monthlyPayment * 300;
+
+        document.getElementById("repay").value = formatter.format(monthlyPayment);
+        document.getElementById("totalRepay").value = formatter.format(totalPayment);
+    } else {
+        let monthlyPayment = rate * mortgage;
+        let totalPayment = monthlyPayment * term;
+        
+        document.getElementById("repay").value = formatter.format(monthlyPayment);
+        document.getElementById("totalRepay").value = formatter.format(totalPayment);
     }
-    document.getElementById("totalRepay").value = "$" + totalPayment;
+
 }
 
 function clearAll() {
