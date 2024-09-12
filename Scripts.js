@@ -3,7 +3,33 @@ function calculateResults() {
     let term = document.getElementById("term").value;
     let mortgage = document.getElementById("amount").value;
     formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    
+    let problem = false;
+
+    if (rate=="") {
+        document.getElementById("errorRate").innerHTML = "This field is required";
+        document.getElementById("rateDiv").style.display = "none";
+        document.getElementById("hiddenRate").style.display = "inline-block";
+        document.getElementById("percent").style.display = "inline-block";
+        document.getElementById("rate1").style.display = "inline-block";
+        problem = true; 
+    }
+    if (term=="") {
+        document.getElementById("errorTerm").innerHTML = "This field is required";
+        document.getElementById("termDiv").style.display = "none";
+        document.getElementById("hiddenTerm").style.display = "inline-block";
+        document.getElementById("yearText").style.display = "inline-block";
+        document.getElementById("term1").style.display = "inline-block";
+        problem = true;
+    }
+    if (mortgage=="") {
+        hideMortgage();
+        problem = true;
+    } 
+
+    if (problem == true) {
+        return;
+    }
+
     // convert the information for the formula
     rate = rate/100;
     rate = rate/12;
@@ -37,4 +63,15 @@ function clearAll() {
             radios[i].checked = false;
         }
     }
+}
+
+function hideMortgage() {
+    document.getElementById("errorMorg").innerHTML = "This field is required";
+    document.getElementById("morg").style.display = "none";
+    document.getElementById("hiddenMorg").style.display = "flex";
+    document.getElementById("amount").style.display = "none";
+    document.getElementById("amount1").style.display = "flex";
+    document.getElementById("dollarSign").style.display = "none";
+    document.getElementById("dollarSign1").style.display = "inline-block";
+
 }
