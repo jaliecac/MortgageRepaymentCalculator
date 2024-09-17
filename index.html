@@ -19,7 +19,7 @@
 
     <h2>Mortgage Amount</h2>
     <div id="morg"><span class="morgText" id="dollarSign">$</span><input type="text" id="amount" name="mortgageAmount"></div>
-    <div id="hiddenMorg"><span class="morgText" id="dollarSign1">$</span><input type="text" id="amount1" name="mortgageAmount"></div>
+    <div id="hiddenMorg"><span class="morgText" id="dollarSign1">$</span><input type="text" id="amount1" name="mortgageAmount" onfocus="removeWarnings()" ></div>
     <span id="errorMorg"></span><br>
 
     <h2 class="left margin">Mortgage Term</h2>
@@ -28,9 +28,9 @@
     <br>
 
     <div class="termRate left" id="termDiv"><input type="text" id="term" name="mortgageTerm"><span class="boxText">years</span></div>
-    <div class="termRate right" id="rateDiv"><input type="text" id="rate" name="interestRate"><span class="boxText">%</span></div>
-    <div class="termRate left" id="hiddenTerm"><input type="text" id="term1" name="mortgageTerm"><span class="boxText" id="yearText">years</span></div>
-    <div class="termRate right" id="hiddenRate"><input type="text" id="rate1" name="interestRate"><span class="boxText" id="percent">%</span></div>
+    <div class="termRate right" id="rateDiv"><input type="text" id="rate" name="interestRate" ><span class="boxText">%</span></div>
+    <div class="termRate left" id="hiddenTerm"><input type="text" id="term1" name="mortgageTerm" onfocus="removeWarnings()"><span class="boxText" id="yearText">years</span></div>
+    <div class="termRate right" id="hiddenRate"><input type="text" id="rate1" name="interestRate" onfocus="removeWarnings()"><span class="boxText" id="percent">%</span></div>
     <br><span id="errorTerm" class="margin"></span>
     <span id="errorRate"></span>
 

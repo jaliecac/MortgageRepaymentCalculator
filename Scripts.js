@@ -1,24 +1,17 @@
+let problem = false;
+
 function calculateResults() {
     let rate = document.getElementById("rate").value;
     let term = document.getElementById("term").value;
     let mortgage = document.getElementById("amount").value;
     formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    let problem = false;
 
     if (rate=="") {
-        document.getElementById("errorRate").innerHTML = "This field is required";
-        document.getElementById("rateDiv").style.display = "none";
-        document.getElementById("hiddenRate").style.display = "inline-block";
-        document.getElementById("percent").style.display = "inline-block";
-        document.getElementById("rate1").style.display = "inline-block";
+        hideRate();
         problem = true; 
     }
     if (term=="") {
-        document.getElementById("errorTerm").innerHTML = "This field is required";
-        document.getElementById("termDiv").style.display = "none";
-        document.getElementById("hiddenTerm").style.display = "inline-block";
-        document.getElementById("yearText").style.display = "inline-block";
-        document.getElementById("term1").style.display = "inline-block";
+        hideTerm();
         problem = true;
     }
     if (mortgage=="") {
@@ -73,5 +66,46 @@ function hideMortgage() {
     document.getElementById("amount1").style.display = "flex";
     document.getElementById("dollarSign").style.display = "none";
     document.getElementById("dollarSign1").style.display = "inline-block";
+}
 
+function hideRate() {
+    document.getElementById("errorRate").innerHTML = "This field is required";
+    document.getElementById("rateDiv").style.display = "none";
+    document.getElementById("hiddenRate").style.display = "inline-block";
+    document.getElementById("percent").style.display = "inline-block";
+    document.getElementById("rate1").style.display = "inline-block";
+}
+
+function hideTerm() {
+    document.getElementById("errorTerm").innerHTML = "This field is required";
+    document.getElementById("termDiv").style.display = "none";
+    document.getElementById("hiddenTerm").style.display = "inline-block";
+    document.getElementById("yearText").style.display = "inline-block";
+    document.getElementById("term1").style.display = "inline-block";
+}
+
+function removeWarnings() {
+    if (problem == true) {
+        // remove term warnings
+        document.getElementById("errorTerm").innerHTML = "";
+        document.getElementById("termDiv").style.display = "";
+        document.getElementById("hiddenTerm").style.display = "none";
+        document.getElementById("yearText").style.display = "none";
+        document.getElementById("term1").style.display = "none";
+        // remove rate warnings
+        document.getElementById("errorRate").innerHTML = "";
+        document.getElementById("rateDiv").style.display = "";
+        document.getElementById("hiddenRate").style.display = "none";
+        document.getElementById("percent").style.display = "none";
+        document.getElementById("rate1").style.display = "none";
+        // remove mortgage warnings
+        document.getElementById("errorMorg").innerHTML = "";
+        document.getElementById("morg").style.display = "";
+        document.getElementById("hiddenMorg").style.display = "none";
+        document.getElementById("amount").style.display = "";
+        document.getElementById("amount1").style.display = "none";
+        document.getElementById("dollarSign").style.display = "";
+        document.getElementById("dollarSign1").style.display = "none";
+        problem = false;
+    }
 }
