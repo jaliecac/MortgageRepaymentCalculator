@@ -18,10 +18,25 @@ function calculateResults() {
         hideMortgage();
         problem = true;
     } 
+    let radios = document.getElementsByTagName("input");
+    let emptyCount = 0;
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].type == "radio") {
+            if (radios[i].checked == false){
+                emptyCount++;
+            }
+        }
+        if (emptyCount == 2) {
+            showWrongRadio();
+            problem = true;
+        }
+    }
 
     if (problem == true) {
         return;
     }
+
+    hideInitialPage();
 
     // convert the information for the formula
     rate = rate/100;
@@ -84,6 +99,10 @@ function hideTerm() {
     document.getElementById("term1").style.display = "inline-block";
 }
 
+function showWrongRadio() {
+    document.getElementById("errorRadio").innerHTML = "This field is required";
+}
+
 function removeWarnings() {
     if (problem == true) {
         // remove term warnings
@@ -106,6 +125,17 @@ function removeWarnings() {
         document.getElementById("amount1").style.display = "none";
         document.getElementById("dollarSign").style.display = "";
         document.getElementById("dollarSign1").style.display = "none";
+        // remove radio warning 
+        document.getElementById("errorRadio").innerHTML = "";
         problem = false;
     }
+}
+
+function hideInitialPage() {
+    document.getElementById("initialImage").style.display = "none";
+    document.getElementById("initialTitle").style.display = "none";
+    document.getElementById("initialText").style.display = "none";
+    document.getElementById("resultTitle").style.display = "inline-block";
+    document.getElementById("resultText").style.display = "inline-block";
+    document.getElementById("resultDiv").style.display = "inline-block";
 }

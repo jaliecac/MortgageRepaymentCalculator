@@ -39,6 +39,7 @@
     <label for="repayment">Repayment</label><br></div>
     <div class="radioButtons"><input type="radio" id="interest" name="mortgageType" value="Interest"> 
     <label for="interest">Interest Only</label><br></div>
+    <span id="errorRadio"></span>
 
     <button id="calculate" onclick="calculateResults()"><img src="assets/images/icon-calculator.svg" alt="Calculator">Calculate Repayments</button>
     <!-- Empty results start -->
@@ -49,12 +50,13 @@
   </main>
 
   <section>
-    <h1>Your results</h1>
+  <!-- Initially hidden -->
+    <h1 id="resultTitle">Your results</h1>
 
-    <p>Your results are shown below based on the information you provided. 
+    <p id="resultText">Your results are shown below based on the information you provided. 
     To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-    <div>
+    <div id="resultDiv">
       <h2>Your monthly repayments</h2>
       <input type="text" id="repay" name="monthlyRepayment">
 
@@ -62,8 +64,13 @@
 
       <h2>Total you'll repay over the term</h2>
       <input type="text" id="totalRepay" name="totalRepayment">
-      <!-- Completed results end -->
     </div>
+
+    <!-- Shown initially -->
+    <img id="initialImage" src="assets/images/illustration-empty.svg">
+
+    <h3 id="initialTitle">Results shown here</h3>
+    <h4 id="initialText">Complete the form and click "calculate repayments" to see what your monthly repayments would be</h4>
   </section>
 </body>
 </html>
